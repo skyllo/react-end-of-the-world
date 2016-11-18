@@ -1,47 +1,71 @@
-import { resolve } from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+const { resolve } = require('path');
+const webpack = require('webpack');
 
-export default {
+
+module.exports = env => {
+  return {
     entry: [
-        'react-hot-loader/patch',
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server',
-        './src/index.js'
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
+      './index.js'
     ],
     output: {
-        filename: 'bundle.js',
-        path: resolve(__dirname, 'dist'),
-        publicPath: '/'
+      filename: 'bundle.js',
+      //the output bundle
+
+      path: resolve(__dirname, 'dist'),
+
+      publicPath: '/'
+      //necessary for HMR to know where to load the hot update chunks
     },
-    devServer: {
-        hot: true,
-        port: 3000,
-        contentBase: '/dist',
-        publicPath: '/'
-    },
+
+    context: resolve(__dirname, 'src'),
+
     devtool: 'inline-source-map',
-    module: {
-        rules: [
-            {
-                test: /.jsx?$/,
-                exclude: /node_modules/,
-                use: ['babel-loader']
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader?modules', 'postcss-loader'],
-            }
-        ]
+
+    devServer: {
+      port: 3000,
+      
+      hot: true,
+      //activate hot reloading
+
+      contentBase: resolve(__dirname, 'dist'),
+      //match the output path
+
+      publicPath: '/'
+      //match the output publicPath
     },
+
+    module: {
+      loaders: [
+        { test: /\.js$/,
+          loaders: [
+            'babel-loader',
+          ],
+          exclude: /node_modules/
+        },
+        {
+          test: /\.css$/,
+          loaders: [
+            'style-loader',
+            'css-loader?modules',
+            'postcss-loader',
+          ],
+        },
+      ],
+    },
+
     plugins: [
-        // activates HMR
-        new webpack.HotModuleReplacementPlugin(),
-        // prints more readable module names in the browser console on HMR updates
-        new webpack.NamedModulesPlugin(),
-        // load HTML template
-        new HtmlWebpackPlugin({
-            template: './src/index.html'
-        })
-    ]
+      new webpack.HotModuleReplacementPlugin(),
+      //activates HMR
+
+      new webpack.NamedModulesPlugin(),
+      //prints more readable module names in the browser console on HMR updates
+
+      new webpack.optimize.UglifyJsPlugin({
+          minimize: true
+      })
+    ],
+  };
 };
