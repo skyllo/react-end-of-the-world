@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
     entry: [
@@ -19,10 +20,11 @@ export default {
         contentBase: '/dist',
         publicPath: '/'
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /.jsx?$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
             },
@@ -37,5 +39,9 @@ export default {
         new webpack.HotModuleReplacementPlugin(),
         // prints more readable module names in the browser console on HMR updates
         new webpack.NamedModulesPlugin(),
+        // load HTML template
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
     ]
 };
