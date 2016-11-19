@@ -25,7 +25,8 @@ export default merge(base, {
   devServer: {
     port: 3000,
     hot: true,
-    publicPath: '/'
+    publicPath: '/',
+    stats: 'errors-only'
   },
 
   plugins: [
