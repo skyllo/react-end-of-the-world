@@ -2,7 +2,7 @@ import base from './webpack.base.babel';
 import merge from 'webpack-merge';
 import webpack from 'webpack';
 
-export default (env) => merge(base(env), {
+export default merge(base, {
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',

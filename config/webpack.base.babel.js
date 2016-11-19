@@ -4,7 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 
-export default (env) => ({
+export default {
   output: {
     filename: '[name].bundle.js',
     path: resolve(__dirname, '../dist'),
@@ -27,9 +27,8 @@ export default (env) => ({
           loader: [{
             loader: "css-loader", query: { sourceMap: true, modules: true }},
             'sass-loader'
-            ]
-          }
-        ),
+          ]
+        }),
         exclude: /node_modules/
       }
     ]
@@ -44,13 +43,7 @@ export default (env) => ({
     // extract css
     new ExtractTextPlugin("styles.css"),
 
-    // need this to remove the dev-only bundled js
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(env)
-      }
-    }),
-
+    // configure options for loaders
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
@@ -61,4 +54,4 @@ export default (env) => ({
       }
     }),
   ]
-})
+}

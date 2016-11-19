@@ -2,11 +2,13 @@ import base from './webpack.base.babel';
 import merge from 'webpack-merge';
 import webpack from 'webpack';
 
-export default (env) => merge(base(env), {
+export default merge(base, {
   entry: {
     js: './index.js',
     vendor: ['react', 'react-dom']
   },
+
+  devtool: 'cheap-module-source-map',
 
   plugins: [
     // assign modules and chunks shorter ids to lower file size
@@ -17,6 +19,13 @@ export default (env) => merge(base(env), {
       name: 'vendor',
       minChunks: Infinity,
       filename: 'vendor.bundle.js'
+    }),
+
+    // set build env to production
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
     }),
 
     // sets the parameters of other loaders

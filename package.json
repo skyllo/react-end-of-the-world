@@ -2,8 +2,8 @@
   "name": "react-end-of-the-world",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --config config/webpack.prod.babel.js --env production",
-    "start": "webpack-dev-server --config config/webpack.dev.babel.js"
+    "build": "webpack --progress --config config/webpack.prod.babel.js",
+    "start": "webpack-dev-server --progress --config config/webpack.dev.babel.js"
   },
   "author": "Nick <skyllo.dev@gmail.com>",
   "license": "ISC",
