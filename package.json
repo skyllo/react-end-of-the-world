@@ -2,7 +2,7 @@
   "name": "react-end-of-the-world",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --env production",
     "start": "webpack-dev-server",
     "stats": "webpack --json > stats.json"
   },
