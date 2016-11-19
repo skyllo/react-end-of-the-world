@@ -10,6 +10,23 @@ export default merge(base, {
 
   devtool: 'cheap-module-source-map',
 
+  modules: {
+    rules: [
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: [{
+            loader: "css-loader", query: { modules: true }},
+            'postcss-loader',
+            'sass-loader'
+          ]
+        }),
+        exclude: /node_modules/
+      }
+    ]
+  },
+
   plugins: [
     // assign modules and chunks shorter ids to lower file size
     new webpack.optimize.OccurrenceOrderPlugin(),

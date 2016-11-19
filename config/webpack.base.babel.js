@@ -19,18 +19,6 @@ export default {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: [{
-            loader: "css-loader", query: { modules: true }},
-            'postcss-loader',
-            'sass-loader'
-          ]
-        }),
-        exclude: /node_modules/
       }
     ]
   },

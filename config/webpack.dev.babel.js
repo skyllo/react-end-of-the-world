@@ -12,6 +12,16 @@ export default merge(base, {
 
   devtool: 'source-map',
 
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader?modules&localIdentName=[name]__[local].[hash:base64:5]&sourceMap&-minimize&importLoaders=2!postcss-loader!sass-loader?modules&outputStyle=expanded&sourceMap',
+        exclude: /node_modules/
+      }
+    ]
+  },
+
   devServer: {
     port: 3000,
     hot: true,
