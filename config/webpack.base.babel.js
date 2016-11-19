@@ -1,6 +1,5 @@
 import { resolve } from 'path';
 import autoprefixer from 'autoprefixer';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 
@@ -28,9 +27,6 @@ export default {
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
-
-    // extract css
-    new ExtractTextPlugin("styles.css"),
 
     // configure options for loaders
     new webpack.LoaderOptionsPlugin({

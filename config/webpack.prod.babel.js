@@ -1,4 +1,5 @@
 import base from './webpack.base.babel';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import merge from 'webpack-merge';
 import webpack from 'webpack';
 
@@ -55,5 +56,8 @@ export default merge(base, {
     new webpack.optimize.UglifyJsPlugin({
       comments: false
     })
+
+    // extract css
+    new ExtractTextPlugin("styles.css"),
   ]
 })
