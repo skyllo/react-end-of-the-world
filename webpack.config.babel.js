@@ -1,6 +1,7 @@
 import { resolve } from 'path';
-import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
 export default (env) => {
 	return {
@@ -34,6 +35,11 @@ export default (env) => {
 		},
 
 		plugins: [
+      // bundle HTML page
+      new HtmlWebpackPlugin({
+        template: 'index.html'
+      }),
+
 			// assign modules and chunks shorter ids to lower file size
 			new webpack.optimize.OccurrenceOrderPlugin(),
 
