@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --env production",
-    "start": "webpack-dev-server",
-    "stats": "webpack --json > stats.json"
+    "start": "webpack-dev-server"
   },
   "author": "Nick <skyllo.dev@gmail.com>",
   "license": "ISC",
