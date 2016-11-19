@@ -3,7 +3,7 @@ import styles from './App.css';
 
 export const App = () => (
   <div className={styles.app}>
-    <h2>Ho2a,</h2>
+    <h2>Ho22,</h2>
   </div>
 );
 
