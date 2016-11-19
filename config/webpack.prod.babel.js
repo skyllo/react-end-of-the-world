@@ -9,8 +9,6 @@ export default merge(base, {
     vendor: ['react', 'react-dom']
   },
 
-  devtool: 'cheap-module-source-map',
-
   module: {
     rules: [
       {
