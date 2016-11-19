@@ -17,7 +17,8 @@ export default (env) => {
 		context: resolve(__dirname, 'src'),
 
 		module: {
-			rules: [{
+			rules: [
+        {
 					test: /\.js$/,
 					loaders: ['babel-loader'],
 					exclude: /node_modules/
@@ -63,6 +64,6 @@ export default (env) => {
 			new webpack.optimize.UglifyJsPlugin({
 				comments: false
 			})
-		],
+		]
 	}
 };
