@@ -13,6 +13,7 @@ export default (env) => {
 		output: {
 			filename: '[name].bundle.js',
 			path: resolve(__dirname, 'dist'),
+      publicPath: '/'
 		},
 
 		context: resolve(__dirname, 'src'),
