@@ -12,10 +12,14 @@ export default {
 
   context: resolve(__dirname, '../src'),
 
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/
       }
