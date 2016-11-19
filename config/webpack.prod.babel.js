@@ -40,7 +40,7 @@ export default merge(base, {
     // set build env to production
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production')
       }
     }),
 
@@ -58,4 +58,4 @@ export default merge(base, {
     // extract css
     new ExtractTextPlugin("styles.css")
   ]
-})
+});
