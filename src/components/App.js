@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './App.css';
+import styles from './App.scss';
 
 export const App = () => (
   <div className={styles.app}>

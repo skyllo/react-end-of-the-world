@@ -1,5 +1,4 @@
 import base from './webpack.base.babel';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import merge from 'webpack-merge';
 import webpack from 'webpack';
 
@@ -7,19 +6,6 @@ export default (env) => merge(base(env), {
   entry: {
     js: './index.js',
     vendor: ['react', 'react-dom']
-  },
-
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: "style-loader",
-          loader: "css-loader"
-        }),
-        exclude: /node_modules/
-      }
-    ]
   },
 
   plugins: [
@@ -32,9 +18,6 @@ export default (env) => merge(base(env), {
       minChunks: Infinity,
       filename: 'vendor.bundle.js'
     }),
-
-    // extracts CSS from JS and puts into external file
-    new ExtractTextPlugin("styles.css"),
 
     // sets the parameters of other loaders
     new webpack.LoaderOptionsPlugin({

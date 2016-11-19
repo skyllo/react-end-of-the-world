@@ -10,31 +10,12 @@ export default (env) => merge(base(env), {
     './index.js'
   ],
 
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
 
   devServer: {
     port: 3000,
     hot: true,
     publicPath: '/'
-  },
-
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules',
-          'postcss-loader',
-        ],
-      },
-    ],
   },
 
   plugins: [
