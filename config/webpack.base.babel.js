@@ -25,7 +25,8 @@ export default {
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
           loader: [{
-            loader: "css-loader", query: { sourceMap: true, modules: true }},
+            loader: "css-loader", query: { modules: true }},
+            'postcss-loader',
             'sass-loader'
           ]
         }),
