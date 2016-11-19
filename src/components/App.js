@@ -8,5 +8,5 @@ export const App = () => (
 );
 
 export function fuckThis() {
-  console.log('fuclk');
+  console.log('fuck!!!!!');
 }
