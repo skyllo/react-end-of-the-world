@@ -11,7 +11,7 @@ export default merge(base, {
 
   devtool: 'cheap-module-source-map',
 
-  modules: {
+  module: {
     rules: [
       {
         test: /\.scss$/,
@@ -55,9 +55,9 @@ export default merge(base, {
     // minifies the code
     new webpack.optimize.UglifyJsPlugin({
       comments: false
-    })
+    }),
 
     // extract css
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin("styles.css")
   ]
 })
