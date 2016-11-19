@@ -15,7 +15,7 @@ export default (env) => ({
     publicPath: '/'
   },
 
-  context: resolve(__dirname, 'src'),
+  context: resolve(__dirname, '../src'),
 
   module: {
     rules: [
@@ -29,7 +29,8 @@ export default (env) => ({
         loader: ExtractTextPlugin.extract({
           fallbackLoader: "style-loader",
           loader: "css-loader"
-        })
+        }),
+        exclude: /node_modules/
       }
     ]
   },
