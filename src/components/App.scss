@@ -1,5 +1,61 @@
 .app {
-    font-family: helvetica, arial, sans-serif;
-    line-height: 200%;
-    padding: 6px 20px 30px;
+  font-family: helvetica, arial, sans-serif;
+  width: 100%;
+  padding: 150px;
+  box-sizing: border-box;
+
+  &__lineContainer {
+    position: relative;
+    padding-bottom: 20px;
+  }
+
+  &__line {
+    border-bottom: 10px solid #e3e3e3;
+  }
+
+  &__lineProgress {
+    border-bottom: 10px solid #2a98ff;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__textContainer {
+    position: relative;
+  }
+
+  &__textStart,
+  &__textCurrent,
+  &__textEnd {
+    position: absolute;
+    background-color: #ff6b78;
+    color: #ffffff;
+    padding: 20px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 20px solid #ff6b78;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__textStart {
+    transform: translateX(-50%);
+  }
+
+  &__textCurrent {
+    transform: translateX(-50%);
+  }
+
+  &__textEnd {
+    right: 0;
+    transform: translateX(50%);
+  }
 }
