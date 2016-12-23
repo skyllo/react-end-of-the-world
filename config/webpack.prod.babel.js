@@ -37,13 +37,6 @@ export default merge(base, {
       filename: 'vendor.bundle.js'
     }),
 
-    // set build env to production
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
-
     // sets the parameters of other loaders
     new webpack.LoaderOptionsPlugin({
       minimize: true,

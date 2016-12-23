@@ -2,7 +2,7 @@
   "name": "react-end-of-the-world",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --progress --config config/webpack.prod.babel.js",
+    "build": "webpack --progress -p --config config/webpack.prod.babel.js",
     "start": "webpack-dev-server --progress --config config/webpack.dev.babel.js"
   },
   "author": "Nick <skyllo.dev@gmail.com>",
@@ -24,10 +24,10 @@
     "html-webpack-plugin": "^2.24.1",
     "node-sass": "^3.13.0",
     "postcss-loader": "^1.1.1",
-    "react-hot-loader": "v3.0.0-beta.6",
+    "react-hot-loader": "next",
     "sass-loader": "^4.0.2",
     "style-loader": "0.13.1",
-    "webpack": "2.1.0-beta.27",
+    "webpack": "beta",
     "webpack-dev-server": "2.1.0-beta.11",
     "webpack-merge": "^0.17.0"
   },
