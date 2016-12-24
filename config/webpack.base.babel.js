@@ -20,7 +20,7 @@ export default {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        loaders: ['react-hot-loader/webpack', 'babel-loader'],
         exclude: /node_modules/
       }
     ]
