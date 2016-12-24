@@ -22,6 +22,10 @@ export default merge(base, {
     ]
   },
 
+  performance: {
+    hints: false
+  },
+
   devServer: {
     port: 3000,
     hot: true,
