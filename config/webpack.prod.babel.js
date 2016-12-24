@@ -5,7 +5,7 @@ import webpack from 'webpack';
 
 export default merge(base, {
   entry: {
-    js: './index.js',
+    js: './index.jsx',
     vendor: ['react', 'react-dom']
   },
 

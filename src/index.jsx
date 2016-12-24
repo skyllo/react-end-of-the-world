@@ -9,7 +9,7 @@ import './index.scss';
 const render = () => {
   ReactDOM.render(
     <AppContainer>
-      <App/>
+      <App />
     </AppContainer>,
     document.getElementById('root')
   );
