@@ -4589,7 +4589,7 @@ webpack-sources@^0.1.0:
     source-list-map "~0.1.0"
     source-map "~0.5.3"
 
-webpack@beta:
+webpack@v2.2.0-rc.2:
   version "2.2.0-rc.2"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.2.0-rc.2.tgz#2665115b503ed68a7ec77d17c4e0389a5e386418"
   dependencies:
